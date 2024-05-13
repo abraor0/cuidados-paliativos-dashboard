@@ -1,4 +1,50 @@
-const pacientes = [
+interface Paciente {
+  alta: boolean;
+  categoria: string;
+  cns: string;
+  createdAt: string;
+  dataNascimento: string;
+  dataObito: string | null;
+  excluido: boolean;
+  nome: string;
+  nomeMae: string;
+  numeroProntuario: string;
+  sexo: string;
+  tipoPaciente: string;
+  updatedAt: string;
+}
+
+interface Usuario {
+  admin: boolean;
+  ativo: boolean;
+  email: string;
+  nome: string;
+}
+
+interface ESAS {
+  data: string;
+  pacienteId: string;
+  respondido: string;
+  sintomas: {
+    apetite: number;
+    "bem-estar": number;
+    cansaco: number;
+    dor: number;
+    "falta-ar": string;
+    nausea: number;
+    preocupacao: string;
+    sonolencia: string;
+    tristeza: number;
+  };
+}
+
+interface PPS {
+  data: string;
+  pacienteId: string;
+  valor: number;
+}
+
+export const pacientes: Paciente[] = [
   {
     alta: false,
     categoria: "PRECOCE",
@@ -181,7 +227,7 @@ const pacientes = [
   },
 ];
 
-const usuarios = [
+export const usuarios: Usuario[] = [
   {
     admin: true,
     ativo: true,
@@ -220,10 +266,10 @@ const usuarios = [
   },
 ];
 
-const ESAS = [
+export const ESAS: ESAS[] = [
   {
     data: "10 de maio de 2024 14:30:00 UTC-3",
-    pacienteId: "1A2b3C4d5E6f7G8h9I0j",
+    pacienteId: "100200300400500",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 3,
@@ -239,7 +285,7 @@ const ESAS = [
   },
   {
     data: "11 de maio de 2024 15:30:00 UTC-3",
-    pacienteId: "2B3c4D5e6F7g8H9i0J1k",
+    pacienteId: "200300400500600",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 2,
@@ -255,7 +301,7 @@ const ESAS = [
   },
   {
     data: "12 de maio de 2024 16:30:00 UTC-3",
-    pacienteId: "3C4d5E6f7G8h9I0j1K2l",
+    pacienteId: "300400500600700",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 1,
@@ -271,7 +317,7 @@ const ESAS = [
   },
   {
     data: "13 de maio de 2024 17:30:00 UTC-3",
-    pacienteId: "4D5e6F7g8H9i0J1k2L3m",
+    pacienteId: "400500600700800",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 0,
@@ -287,7 +333,7 @@ const ESAS = [
   },
   {
     data: "14 de maio de 2024 18:30:00 UTC-3",
-    pacienteId: "5E6f7G8h9I0j1K2l3M4n",
+    pacienteId: "500600700800900",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 1,
@@ -303,7 +349,7 @@ const ESAS = [
   },
   {
     data: "15 de maio de 2024 19:30:00 UTC-3",
-    pacienteId: "6F7g8H9i0J1k2L3m4N5o",
+    pacienteId: "6007008009001000",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 2,
@@ -319,7 +365,7 @@ const ESAS = [
   },
   {
     data: "16 de maio de 2024 20:30:00 UTC-3",
-    pacienteId: "1A2b3C4d5E6f7G8h9I0j",
+    pacienteId: "100200300400500",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 3,
@@ -335,7 +381,7 @@ const ESAS = [
   },
   {
     data: "17 de maio de 2024 21:30:00 UTC-3",
-    pacienteId: "1A2b3C4d5E6f7G8h9I0j",
+    pacienteId: "100200300400500",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 2,
@@ -351,7 +397,7 @@ const ESAS = [
   },
   {
     data: "18 de maio de 2024 22:30:00 UTC-3",
-    pacienteId: "2B3c4D5e6F7g8H9i0J1k",
+    pacienteId: "200300400500600",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 1,
@@ -367,7 +413,7 @@ const ESAS = [
   },
   {
     data: "19 de maio de 2024 23:30:00 UTC-3",
-    pacienteId: "2B3c4D5e6F7g8H9i0J1k",
+    pacienteId: "200300400500600",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 0,
@@ -383,7 +429,7 @@ const ESAS = [
   },
   {
     data: "20 de maio de 2024 00:30:00 UTC-3",
-    pacienteId: "3C4d5E6f7G8h9I0j1K2l",
+    pacienteId: "300400500600700",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 1,
@@ -399,7 +445,7 @@ const ESAS = [
   },
   {
     data: "21 de maio de 2024 01:30:00 UTC-3",
-    pacienteId: "3C4d5E6f7G8h9I0j1K2l",
+    pacienteId: "300400500600700",
     respondido: "PACIENTE",
     sintomas: {
       apetite: 2,
@@ -415,65 +461,65 @@ const ESAS = [
   },
 ];
 
-const PPS = [
+export const PPS: PPS[] = [
   {
     data: "22 de maio de 2024 02:30:00 UTC-3",
-    pacienteId: "1A2b3C4d5E6f7G8h9I0j",
+    pacienteId: "100200300400500",
     valor: 60,
   },
   {
     data: "23 de maio de 2024 03:30:00 UTC-3",
-    pacienteId: "1A2b3C4d5E6f7G8h9I0j",
+    pacienteId: "100200300400500",
     valor: 65,
   },
   {
     data: "24 de maio de 2024 04:30:00 UTC-3",
-    pacienteId: "2B3c4D5e6F7g8H9i0J1k",
+    pacienteId: "200300400500600",
     valor: 70,
   },
   {
     data: "25 de maio de 2024 05:30:00 UTC-3",
-    pacienteId: "2B3c4D5e6F7g8H9i0J1k",
+    pacienteId: "200300400500600",
     valor: 75,
   },
   {
     data: "26 de maio de 2024 06:30:00 UTC-3",
-    pacienteId: "3C4d5E6f7G8h9I0j1K2l",
+    pacienteId: "300400500600700",
     valor: 80,
   },
   {
     data: "27 de maio de 2024 07:30:00 UTC-3",
-    pacienteId: "3C4d5E6f7G8h9I0j1K2l",
+    pacienteId: "300400500600700",
     valor: 85,
   },
   {
     data: "28 de maio de 2024 08:30:00 UTC-3",
-    pacienteId: "4D5e6F7g8H9i0J1k2L3m",
+    pacienteId: "400500600700800",
     valor: 100,
   },
   {
     data: "29 de maio de 2024 09:30:00 UTC-3",
-    pacienteId: "4D5e6F7g8H9i0J1k2L3m",
+    pacienteId: "400500600700800",
     valor: 90,
   },
   {
     data: "30 de maio de 2024 10:30:00 UTC-3",
-    pacienteId: "5E6f7G8h9I0j1K2l3M4n",
+    pacienteId: "500600700800900",
     valor: 80,
   },
   {
     data: "31 de maio de 2024 11:30:00 UTC-3",
-    pacienteId: "5E6f7G8h9I0j1K2l3M4n",
+    pacienteId: "500600700800900",
     valor: 70,
   },
   {
     data: "1 de junho de 2024 12:30:00 UTC-3",
-    pacienteId: "6F7g8H9i0J1k2L3m4N5o",
+    pacienteId: "6007008009001000",
     valor: 60,
   },
   {
     data: "2 de junho de 2024 13:30:00 UTC-3",
-    pacienteId: "6F7g8H9i0J1k2L3m4N5o",
+    pacienteId: "6007008009001000",
     valor: 50,
   },
 ];
